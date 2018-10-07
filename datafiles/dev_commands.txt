@@ -1,0 +1,99 @@
+//This is the file where dev functions live!
+//You can edit this to include whatever you want to, up to 100 functions
+// "//" denotes comments. Comments beside functions will NOT be ignored!
+//	e.g. "test(0) //comment" will crash!
+//Descriptions come directly after the function. They begin with "/*/"
+//You can add names to a parameter by adding a "/" after the parameter type
+//White space (other than in parameter names) will be ignored
+//Do not leave any empty lines! This will cause the game to crash
+//*****************************************************************************
+//
+//===========================
+//= SPAWNERS AND DESTROYERS =
+//===========================
+//============
+//= Spawners =
+//============
+spawn(3,number/x,number/y,string/object)
+/*/creates an instance given (x,y) and object
+spawn_at_cursor(1,string/object)
+/*/spawns an instance at mouse position
+spawn_selected(2,number/x,number/y)
+/*/spawns selected object at (x,y)
+spawn_selected_at_cursor(0)
+/*/spawns selected object at cursor
+spawn_explosion_at_cursor(0)
+/*/creates an explosion at cursor
+//==============
+//= Destroyers =
+//==============
+destroy_selected(0)
+/*/destroys object selected.
+destroy_at_cursor(0)
+/*/destroys object at cursor.
+destroy_all(1,string/object)
+/*/destroys all instances of the object
+destroy_all_selected(0)
+/*/destroys all instances of the selected object
+destroy_enemy_type(1,string/type)
+/*/destroys all enemies of a specific type
+destroy_bullet_type(1,string/type)
+/*/destroys all bullets of a specific type
+destroy_managers(0)
+/*/destroys all managers - for debug purposes only!
+kill_player(0)
+/*/kills the player
+kill_selected(0)
+/*/kills the selected instance if possible
+//
+//=============
+//= SELECTORS =
+//=============
+//
+move_selected(2,number/x,number/y)
+/*/moves selected given (x,y)
+move_selected_to_cursor(0)
+/*/moves selected to cursor position
+selected_set_var(2,string/var,string/val)
+/*/sets the given variable to the given value. if the var does not exist, it will be created. if the var is an array, pointer, or matrix, the variable will not be replaced.
+//
+//====================================
+//= LEVEL QUEUE / TEMPO MANIPULATION =
+//====================================
+//
+level_end(0)
+/*/ends the level queue
+level_set_tempo(2, number/newTempo, number/beatsToTransition)
+/*/sets the level tempo in the specified number of beats
+get_level(0)
+/*/returns the current level
+//
+//========
+//= ROOM =
+//========
+//
+change_room(1,string/room)
+/*/changes the room
+restart_room(0)
+/*/resets the room
+list_layers(0)
+/*/lists all layers in the room
+set_palette(1,string/palette)
+/*/changes the room's palette
+//
+//=========
+//= MISC. =
+//=========
+//
+game_set_zoom(1,number/zoom)
+/*/sets game zoom
+disable_dev_mode(0)
+/*/disables dev mode
+show_masks(1,bool/enable\disable)
+/*/shows masks
+set_control_mode(1,string/mode)
+/*/changes how the heart moves
+list_instances(0)
+/*/lists all active instances in the room
+show_e_hp(1,bool)
+/*/shows enemy hp

@@ -1,0 +1,11 @@
+CURRENT BUGS:
+	serious lag with fullscreen
+
+CURRENT PROJECTS:
+	textbox
+		interrupted text doesn't work
+	
+	sound
+		mixing needs work! sfx should be louder than music; sfx should not be significantly louder than each other.
+		
+	enemies

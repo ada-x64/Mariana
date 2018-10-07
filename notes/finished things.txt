@@ -1,0 +1,37 @@
+FIXED BUGS:
+	background draws funky! probably something to do with layer stuff; already checked d3d, and it's fine.
+		--> error isolated to objE. when objE is spawned, it "erases" or draws over objM
+	game freezes when running command room_restart(). i do not know why.
+	Game crashes when multiple objE_* are spawned. Nothing to do with the objects themselves nor objE_parent.
+
+FINISHED PROJECTS:
+	controller
+		switched from variables to an array. hopefully that'll make things easier. not as easy to reference as "C.button".
+		made it reinput as variables as well. (is there a point to having both?)
+
+	temporary sfx
+		bullet hits
+		enemy dies
+		
+	textbox
+		text at all - regular, bold, and italic fonts
+		special characters \c, \", \n
+		some issues with spacing
+		needs polishing, basically! but basic functions are there
+		
+	player
+		polished movement, added functioning gamepad support <1/19/18>
+		
+	enemies
+		make them come from the top like a space shooter <1/18/18>
+		make them move at all! <1/18/18>
+		level editor - redo script <1/18/18>
+			e(spawn position [0,1], xgoal, ygoal, entry curvature [-90,90], entry speed, path, path rotation, lifetime, speed, exit curvature [-90,90], btype, bspd, bdir, bfreq)
+				enemies will spawn on a line on a circle outside of the play area (and preferably outside of view). they will follow a curve to the specified x- and y-goal at the specified entry speed.
+				when they reach their xgoal/ygoal, they will begin their gameplay path and follow it at the specific speed and at the specific rotation. if their path is too short, it will repeat until the end of its lifetime.
+				while on its path, it will shoot the specified bullet type at the specified angle (irrespective of background angle) at the specified speed. certain paths will come with bullet information, otherwise it will default to the specified.
+				once the lifetime is over, the enemy will leave to its exit position on the spawn circle (within a 180 deg arc) and despawn.
+			--what about minibosses and special enemies? should i just have special enemy objects for each kind? that would PROBABLY make more sense; that way they can follow their own paths without the 10 billion function places
+				LEVEL EDITOR DEFINITIONS ::
+				E(type, xgoal, ygoal, entry_curv, lifetime, exit_curve);											regular enemy function  -  6 parameters. bullet and speed parameters determined by Etype.
+				O(type, xgoal, ygoal, entry_curv, lifetime, exit_curve, entry_spd, spd, btype, bfreq, bspd, bdir);	extended enemy function - 12 parameters

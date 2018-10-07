@@ -1,0 +1,19 @@
+dir = random(360);
+lifespan = 1;
+timer = -fps;
+width = 8; 
+
+dist = 0;
+W = global.playarea_width;
+dist2 = W;
+spd = 45;
+a=0;
+b=0;
+c=0;
+d=0;
+e=0;
+f=0;
+g=0;
+h=0;
+xx = x;
+yy = y;

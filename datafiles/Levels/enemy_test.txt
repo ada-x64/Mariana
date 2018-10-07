@@ -1,0 +1,15 @@
+﻿#grid_type = one_plane
+
+&h = E(heart, burst5, 1, 1, 0, 8)
+&e = E   (eye, bomb, 2, 1, 180, 8)
+&p = E(pills, tracking, 1, 1, 180, 8)
+&m = E(monitor, aimed, 1, 1, 180, 8)
+&r = E(hourglass, spiral, 1, 1, 180, 8)
+
+_----r_
+_---m-_
+_--p--_
+_-e---_
+_h----_
+_-----_
+_-----_ T(100) bps(0.25) curve(0.2,1) rot(0,1)

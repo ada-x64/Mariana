@@ -1,0 +1,36 @@
+﻿//initializing variables
+#grid_type = ellipse
+
+//if these are not included, the default will be:
+//#grid_type = one_plane
+//possibilities for #grid_type:
+//one_plane; two_planes; ellipse;
+
+//definitions:
+//   E(type,   xgoal, ygoal,  entry_curve,lifetime, exit_curve	 )
+
+
+//timeline:
+//end--//
+_-----_
+_-----_
+_-----_
+_-----_ 
+_-----_
+_-----_
+_-----_
+_-----_ curve(1,0) rot(0,0) T(100,0) bps(1) text(Mariana, \roh_ shit.,4)
+//start//
+
+//n.b.: first line must contain the tempo and bps, or it will default to T=60, bps=1.
+
+
+//lifespan(position, lifespan)
+//dir(position, direction) - only for type e
+//T(new tempo, steps to get there)
+//bps(new beats per step) e.g. bps(1) sets 1 beat (quarter note) per step (line), bps(0.5) -> half note; bps(2) -> eighth note; bps(4) -> sixteenth note; etc.
+//rot(new rot, steps to get there)
+//curve(new curve, steps to get there)
+//if grid type is planar, this is the distance from center.
+//0 is completely off the screen, 1 is maximally close.
+//a good middle ground is 0.8 .

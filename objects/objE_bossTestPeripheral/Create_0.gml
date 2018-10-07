@@ -1,0 +1,11 @@
+bosshp = objE_bossTestCenter.hp;
+if bosshp <= 5 enemy_init_hp(2);
+else enemy_init_hp(1);
+barr = enemy_init_bullets(Btype.burst5,1.25,0,0.25,1,-1,true);
+bsetup = true;
+timer = 0;
+surf = surface_create(32,32);
+enter = true;
+stepcount = 0;
+is_boss = false;
+dir = 0;

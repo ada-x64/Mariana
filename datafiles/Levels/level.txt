@@ -1,0 +1,63 @@
+﻿//initializing variables
+#grid_type = two_planes
+
+//if these are not included, the default will be:
+//#grid_type = one_plane
+//possibilities for #grid_type:
+//one_plane; two_planes; ellipse;
+
+//definitions:
+//---OLD!!!---//
+////E(type, bullet type, bullet freq, bullet speed, grid dir, lifespan)
+////&a = E(popcorn, sburst5, 1, 1, 180, 8)
+////&c = E(eye,     aburst9, 1, 1, 180, 8)
+//---NEW!!!---//
+//   E(type,   xgoal, ygoal,  entry_curve,lifetime, exit_curve	 )
+&a = E(popcorn, 0.25,  0.25,            1, 	10, 	     	0) //popcorn 1
+&b = E(popcorn, 0.50,  0.25,            0, 	10, 	     	0) //popcorn 2
+&c = E(popcorn, 0.75,  0.25,           -1, 	10, 	     	0) //popcorn 3
+&d = E(popcorn, 0.25,  0.50, 	        1, 	10, 	     	0) //popcorn 4
+&e = E(popcorn, 0.50,  0.50, 		0, 	10, 		0) //popcorn 5
+&f = E(popcorn, 0.75,  0.50, 	       -1, 	10, 		0) //popcorn 6
+&g = E(popcorn, 0.25,  0.75, 	        1, 	10, 		0) //popcorn 7
+&h = E(popcorn, 0.50,  0.75, 	        0, 	10, 		0) //popcorn 8
+&i = E(popcorn, 0.75,  0.75, 	       -1, 	10, 		0) //popcorn 9
+//|-------|//  
+//|-a-b-c-|// something like that!
+//|-d-e-f-|//  
+//|-g-h-i-|//  
+//|-------|//  
+&j = E(    eye, 0.50,  0.50,		0,	10,		0) //eye!
+
+
+//timeline:
+//end--//
+_--j--_ text(m,\rThat's_it!\w!\w! \n Good_job!,10)
+_-----_ text(m,\r3,0)
+_-----_ text(m,\r2,0)
+_-----_ text(m,\r1,0) curve(0,4) rot(180,4)
+_-----_
+_-----_
+_-----_
+_-----_
+_-----_
+_-----_
+_-----_
+_-ghi-_
+_-def-_
+_-abc-_
+_-----_ curve(0.8,0) rot(0,0) T(100,0) bps(1)
+//start//
+
+//n.b.: first line must contain the tempo and bps, or it will default to T=60, bps=1.
+
+
+//lifespan(position, lifespan)
+//dir(position, direction) - only for type e
+//T(new tempo, steps to get there)
+//bps(new beats per step) e.g. bps(1) sets 1 beat (quarter note) per step (line), bps(0.5) -> half note; bps(2) -> eighth note; bps(4) -> sixteenth note; etc.
+//rot(new rot, steps to get there)
+//curve(new curve, steps to get there)
+//if grid type is planar, this is the distance from center.
+//0 is completely off the screen, 1 is maximally close.
+//a good middle ground is 0.8 .
